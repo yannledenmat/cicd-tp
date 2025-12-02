@@ -46,9 +46,9 @@ The server runs on port 3000 (or `process.env.PORT`). Endpoints:
 Run tests with Jest:
 
 - All tests: `npm test`
-- Unit tests: `npm run test:unit` (if defined; otherwise, use `npm test -- tests/unit/`)
-- Integration tests: `npm run test:integration` (if defined; otherwise, use `npm test -- tests/integration/`)
-- E2E tests: `npm run test:e2e` (if defined; otherwise, use `npm test -- tests/e2e/`)
+- Unit tests: `npm test -- tests/unit/`
+- Integration tests: `npm test -- tests/integration/`
+- E2E tests: `npm test -- tests/e2e/`
 
 ## Linting
 
