@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint .",
-    "test": "rm -rf allure-results/ && jest",
+    "test": "rm -rf allure-reports/ && jest",
     "start": "node src/server.js",
     "alluviewer": "allure serve allure-results",
     "exporter": "node src/allure-prometheus-exporter.js"
