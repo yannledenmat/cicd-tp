@@ -43,12 +43,21 @@ function updateMetrics() {
     const data = JSON.parse(
       fs.readFileSync(path.join(ALLURE_RESULTS_DIR, file), "utf8"),
     );
+    console.log(`Debug: ${file} - status: ${data.status}, time:`, data.time);  // Temporary debug log
     if (data.status) {
       total++;
       if (data.status === "passed") passed++;
       else if (data.status === "failed") failed++;
       else if (data.status === "skipped") skipped++;
-      if (data.time && data.time.duration) durations.push(data.time.duration);
+      
+      // Handle time as either an object with duration or a direct number
+      let duration = 0;
+      if (typeof data.time === 'number') {
+        duration = data.time;
+      } else if (data.time && typeof data.time === 'object' && data.time.duration) {
+        duration = data.time.duration;
+      }
+      if (duration > 0) durations.push(duration);
     }
   });
 
