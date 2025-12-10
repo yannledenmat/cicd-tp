@@ -33,7 +33,6 @@ function updateMetrics() {
   const files = fs
     .readdirSync(ALLURE_RESULTS_DIR)
     .filter((f) => f.endsWith(".json"));
-  console.debug({ files });
   let total = 0,
     passed = 0,
     failed = 0,
