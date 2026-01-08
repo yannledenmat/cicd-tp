@@ -18,6 +18,14 @@ services:
     depends_on:
       - prometheus
 
+  exporter:
+    build: .
+    container_name: exporter
+    ports:
+      - "127.0.0.1:9091:9091"
+    depends_on:
+      - prometheus
+
 volumes:
   prometheus_data:
   grafana_data:
